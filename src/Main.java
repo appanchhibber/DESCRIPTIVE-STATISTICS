@@ -4,7 +4,7 @@ public class Main {
 /**
  * http://www.journaldev.com/1050/java-timer-timertask-example reference
  * @param args
- * sshs
+ * 
  */
 	public static void main(String[] args) {
 
