@@ -11,6 +11,7 @@ public class NumberGenerator extends TimerTask {
 	private int numberOutput;
 	private Random random;
 	private ArrayList<Integer> dataSet;
+	public int dataSetlimt;
 	public NumberGenerator() {
 		minValue = 0;
 		maxValue = 100;
@@ -24,8 +25,12 @@ public class NumberGenerator extends TimerTask {
 
 	@Override
 	public void run() {
+		if(getDataSet().size()!=dataSetlimt){
 		numberOutput = (minValue + random.nextInt(maxValue - minValue + 1));
 		dataSet.add(numberOutput);
+		}else{
+			return;
+		}
 	}
 
 }
