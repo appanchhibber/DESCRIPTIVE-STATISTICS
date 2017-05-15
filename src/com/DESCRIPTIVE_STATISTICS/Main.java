@@ -1,4 +1,7 @@
+package com.DESCRIPTIVE_STATISTICS;
 import java.util.Timer;
+
+import com.DESCRIPTIVESTATISTICS.Operations.NumberGenerator;
 
 public class Main {
 /**
@@ -22,7 +25,7 @@ public class Main {
 		for(int a :numberGenerator.getDataSet()){
 			System.out.println("ArrayList Member:"+a);
 		}
-
+		
 	}
 
 }
