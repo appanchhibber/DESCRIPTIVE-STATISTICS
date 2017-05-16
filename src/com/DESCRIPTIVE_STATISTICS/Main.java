@@ -4,6 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.Timer;
 
+import com.DESCRIPTIVESTATISTICS.Operations.StatisticOperations;
 import com.DESCRIPTIVESTATISTICS.Operations.NumberGenerator;
 
 public class Main {
@@ -42,6 +43,9 @@ public class Main {
 			for (int a : numberGenerator.getDataSet()) {
 				System.out.println("ArrayList Member:" + a);
 			}
+			StatisticOperations desc = new StatisticOperations();
+			System.out.println("Mean = " + desc.findMean(numberGenerator.getDataSet()));
+			System.out.println("Median = " + desc.findMedian(numberGenerator.getDataSet()));
 
 		} catch (InputMismatchException e) {
 			System.out.println("Please Enter Integer value only");
