@@ -5,6 +5,7 @@ import java.util.Scanner;
 import java.util.Timer;
 
 import com.DESCRIPTIVESTATISTICS.Operations.StatisticOperations;
+import com.DESCRIPTIVESTATISTICS.Operations.MathOperations;
 import com.DESCRIPTIVESTATISTICS.Operations.NumberGenerator;
 
 public class Main {
@@ -24,16 +25,15 @@ public class Main {
 		try {
 
 			System.out.println("Enter the size of the List:");
-			Scanner sc = new Scanner(System.in);
-			int count = sc.nextInt();
+			Scanner scan = new Scanner(System.in);
+			int size = scan.nextInt();
 			NumberGenerator numberGenerator = new NumberGenerator();
 			Timer timer = new Timer(true);
-
-			numberGenerator.dataSetlimt = count;
-			timer.schedule(numberGenerator, 0, 10);
+			numberGenerator.setDataSetLimit(size);
+			timer.schedule(numberGenerator, 0, 1);
 			System.out.println("TimerTask started");
 			try {
-				Thread.sleep(1200);
+				Thread.sleep(2000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -43,15 +43,17 @@ public class Main {
 			for (int a : numberGenerator.getDataSet()) {
 				System.out.println("ArrayList Member:" + a);
 			}
+			System.out.println("Size of input list = " + numberGenerator.getDataSet().size());
 			StatisticOperations desc = new StatisticOperations();
-			System.out.println("Mean = " + desc.findMean(numberGenerator.getDataSet()));
-			System.out.println("Median = " + desc.findMedian(numberGenerator.getDataSet()));
+			System.out.println("Mean = " + desc.computeMean(numberGenerator.getDataSet()));
+			System.out.println("Median = " + desc.computeMedian(numberGenerator.getDataSet()));
+			System.out.println("Standard Deviation = "
+					+ MathOperations.squareRoot(desc.computeVariance(numberGenerator.getDataSet())));
 
 		} catch (InputMismatchException e) {
-			System.out.println("Please Enter Integer value only");
+			System.out.println("Please Enter numerical values only");
 			init();
-		}
-		catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
