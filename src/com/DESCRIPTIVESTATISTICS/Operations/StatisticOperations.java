@@ -38,4 +38,14 @@ public class StatisticOperations {
 		System.out.println("Variance = " + variance);
 		return variance;
 	}
+	
+	public Integer findMax(List<Integer> numberList){
+		ListOperations.doSort(numberList);
+		return numberList.get(numberList.size()-1);
+	}
+	
+	public Integer findMin(List<Integer> numberList){
+		ListOperations.doSort(numberList);
+		return numberList.get(0);
+	}
 }
