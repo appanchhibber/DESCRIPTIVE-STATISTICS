@@ -1,12 +1,9 @@
 package com.DESCRIPTIVESTATISTICS.Operations;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class StatisticOperations {
 
-	// protected List numberList = new ArrayList();
 	private double mean;
 
 	public double computeMean(List<Integer> numberList) {
@@ -16,8 +13,7 @@ public class StatisticOperations {
 
 	public double computeMedian(List<Integer> numberList) {
 		double median = 0.0;
-		Collections.sort(numberList);
-
+		ListOperations.doSort(numberList);
 		int middle = numberList.size() / 2;
 		if (numberList.size() % 2 == 0) {
 			median = (numberList.get(middle - 1) + numberList.get(middle)) / 2;
