@@ -9,7 +9,7 @@ import java.util.*;
  * @author hp1
  *
  */
-public class NumberGenerator extends TimerTask {
+public class NumberGenerator {
 	private int minValue;
 	private int maxValue;
 	private int numberOutput;
@@ -32,8 +32,7 @@ public class NumberGenerator extends TimerTask {
 		return dataSet;
 	}
 
-	@Override
-	public void run() {
+	public void getRandomNumber() {
 
 		if (dataSet.size() != dataSetLimit) {
 			numberOutput = (minValue + random.nextInt(maxValue - minValue + 1));

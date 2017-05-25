@@ -28,18 +28,10 @@ public class Main {
 			Scanner scan = new Scanner(System.in);
 			int size = scan.nextInt();
 			NumberGenerator numberGenerator = new NumberGenerator();
-			Timer timer = new Timer(true);
 			numberGenerator.setDataSetLimit(size);
-			timer.schedule(numberGenerator, 0, 1);
-			System.out.println("TimerTask started");
-			try {
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
+			while(numberGenerator.getDataSet().size()!=size){
+				numberGenerator.getRandomNumber();
 			}
-
-			timer.cancel();
-			System.out.println("TimerTask cancelled");
 			for (int a : numberGenerator.getDataSet()) {
 				System.out.println("ArrayList Member:" + a);
 			}
