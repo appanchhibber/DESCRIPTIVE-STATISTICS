@@ -2,9 +2,12 @@ package com.DESCRIPTIVE_STATISTICS;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
 import com.DESCRIPTIVESTATISTICS.Operations.StatisticOperations;
 import com.DESCRIPTIVESTATISTICS.Operations.MathOperations;
 import com.DESCRIPTIVESTATISTICS.Operations.NumberGenerator;
+import com.DESCRIPTIVE_STATISTICS.gui.HomeScreen;
+import com.DESCRIPTIVE_STATISTICS.gui.Windows;
 
 public class Main {
 	/**
@@ -21,7 +24,9 @@ public class Main {
 	Scanner scan;
 	public void init() {
 		try {
-
+			Windows windows=Windows.getInstance();
+			windows.init();
+			windows.setView(new HomeScreen());
 			System.out.println("Enter the size of the List:");
 			scan = new Scanner(System.in);
 			int size = scan.nextInt();
