@@ -1,6 +1,5 @@
 package com.DESCRIPTIVESTATISTICS.Operations;
 
-import java.util.HashMap;
 import java.util.List;
 
 public class StatisticOperations {
@@ -24,8 +23,9 @@ public class StatisticOperations {
 		return median;
 	}
 
-	public int computeMode(List<Integer> numberList) {
-		return MathOperations.findFrequency(numberList);
+	public double computeMode(double[] numberArray) {
+
+		return 0.0;
 	}
 
 	public double computeVariance(List<Integer> numberList) {
@@ -37,5 +37,15 @@ public class StatisticOperations {
 		variance = sum / (numberList.size() - 1);
 		System.out.println("Variance = " + variance);
 		return variance;
+	}
+	
+	public Integer findMax(List<Integer> numberList){
+		ListOperations.doSort(numberList);
+		return numberList.get(numberList.size()-1);
+	}
+	
+	public Integer findMin(List<Integer> numberList){
+		ListOperations.doSort(numberList);
+		return numberList.get(0);
 	}
 }
