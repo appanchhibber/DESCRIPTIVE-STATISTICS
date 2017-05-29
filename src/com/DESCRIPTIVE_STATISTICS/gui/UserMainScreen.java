@@ -8,6 +8,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import com.DESCRIPTIVESTATISTICS.Operations.NumberGenerator;
+
 public class UserMainScreen extends JPanel implements ActionListener {
 	public JLabel info;
 	public JTextField dataSize;
@@ -34,7 +36,7 @@ public class UserMainScreen extends JPanel implements ActionListener {
 		add(dataSize);
 		add(createList);
 		add(back);
-		this.setSize(600, 200);
+		this.setSize(600, 300);
 		this.setLayout(null);
 	}
 
@@ -46,7 +48,12 @@ public class UserMainScreen extends JPanel implements ActionListener {
 		}
 		else if(e.getSource()==createList){
 			Windows window=Windows.getInstance();
-			window.setView(new HomeScreen());
+			NumberGenerator numberGenerator = new NumberGenerator();
+			numberGenerator.setDataSetLimit(Integer.parseInt(dataSize.getText()));
+			while(numberGenerator.getDataSet().size()!=Integer.parseInt(dataSize.getText())){
+				numberGenerator.getRandomNumber();
+			}
+			window.setView(new CalculationScreen(numberGenerator));
 		}
 
 	}

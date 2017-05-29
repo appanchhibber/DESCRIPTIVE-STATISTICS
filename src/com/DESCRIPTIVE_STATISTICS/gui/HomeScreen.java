@@ -44,7 +44,7 @@ public class HomeScreen extends JPanel implements ActionListener {
 		go.setLocation(340, 80);
 		go.addActionListener(this);
 
-		this.setSize(600, 200);
+		this.setSize(600, 300);
 		this.setLayout(null);
 		add(go);
 		add(userType);

@@ -1,11 +1,5 @@
 package com.DESCRIPTIVE_STATISTICS;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
-import com.DESCRIPTIVESTATISTICS.Operations.StatisticOperations;
-import com.DESCRIPTIVESTATISTICS.Operations.MathOperations;
-import com.DESCRIPTIVESTATISTICS.Operations.NumberGenerator;
 import com.DESCRIPTIVE_STATISTICS.gui.HomeScreen;
 import com.DESCRIPTIVE_STATISTICS.gui.Windows;
 
@@ -21,42 +15,10 @@ public class Main {
 		Main obj = new Main();
 		obj.init();
 	}
-	Scanner scan;
-	public void init() {
-		try {
-			Windows windows=Windows.getInstance();
-			windows.init();
-			windows.setView(new HomeScreen());
-			System.out.println("Enter the size of the List:");
-			scan = new Scanner(System.in);
-			int size = scan.nextInt();
-			NumberGenerator numberGenerator = new NumberGenerator();
-			numberGenerator.setDataSetLimit(size);
-			while(numberGenerator.getDataSet().size()!=size){
-				numberGenerator.getRandomNumber();
-			}
-			for (int a : numberGenerator.getDataSet()) {
-				System.out.println("ArrayList Member:" + a);
-			}
-			System.out.println("Size of input list = " + numberGenerator.getDataSet().size());
-			StatisticOperations desc = new StatisticOperations();
-			System.out.println("Maximum Value = "
-					+ desc.findMax(numberGenerator.getDataSet()));
-			System.out.println("Minimum Value = "
-					+ desc.findMin(numberGenerator.getDataSet()));
-			System.out.println("Mean = " + desc.computeMean(numberGenerator.getDataSet()));
-			System.out.println("Median = " + desc.computeMedian(numberGenerator.getDataSet()));
-			System.out.println("Standard Deviation = "
-					+ MathOperations.squareRoot(desc.computeVariance(numberGenerator.getDataSet())));
 
-		} catch (InputMismatchException e) {
-			System.out.println("Please Enter numerical values only");
-			init();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		finally{
-			scan.close();
-		}
+	public void init() {
+		Windows windows = Windows.getInstance();
+		windows.init();
+		windows.setView(new HomeScreen());
 	}
 }

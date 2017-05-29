@@ -14,11 +14,11 @@ public class Windows extends JFrame {
 	public void init(){
 		container = getContentPane();
 		setTitle("Descriptive-Statistics");
-		setPreferredSize(new Dimension(600, 200));
-		setMaximumSize(new Dimension(600, 200));
-		setMinimumSize(new Dimension(500, 200));
+		setPreferredSize(new Dimension(600, 300));
+		setMaximumSize(new Dimension(600, 300));
+		setMinimumSize(new Dimension(600, 300));
 		setResizable(false);
-		setSize(600, 200);
+		setSize(600, 300);
 		setLocationRelativeTo(null); // center window on the screen
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
