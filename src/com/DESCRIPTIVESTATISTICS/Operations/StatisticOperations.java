@@ -1,5 +1,6 @@
 package com.DESCRIPTIVESTATISTICS.Operations;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class StatisticOperations {
@@ -23,9 +24,8 @@ public class StatisticOperations {
 		return median;
 	}
 
-	public double computeMode(double[] numberArray) {
-
-		return 0.0;
+	public int computeMode(List<Integer> numberList) {
+		return MathOperations.findFrequency(numberList);
 	}
 
 	public double computeVariance(List<Integer> numberList) {
