@@ -25,8 +25,7 @@ public class StatisticOperations {
 	}
 
 	public String computeMode(List<Integer> numberList) {
-		
-		
+
 		return MathOperations.findFrequency(numberList);
 	}
 

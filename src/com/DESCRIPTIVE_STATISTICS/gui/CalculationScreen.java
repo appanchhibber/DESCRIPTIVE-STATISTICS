@@ -22,25 +22,27 @@ public class CalculationScreen extends JPanel implements ActionListener {
 	public JList sampleData;
 	public JButton calculate, back;
 	private NumberGenerator numGen;
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource()==back){
-			Windows window=Windows.getInstance();
+		if (e.getSource() == back) {
+			Windows window = Windows.getInstance();
 			window.setView(new HomeScreen());
-		}
-		else if(e.getSource()==calculate){
+		} else if (e.getSource() == calculate) {
 			StatisticOperations desc = new StatisticOperations();
 			max.setText(String.valueOf(desc.findMax(numGen.getDataSet())));
 			min.setText(String.valueOf(desc.findMin(numGen.getDataSet())));
 			mean.setText(String.valueOf(desc.computeMean(numGen.getDataSet())));
-			median.setText(String.valueOf(desc.computeMedian(numGen.getDataSet())));
+			median.setText(String.valueOf(desc.computeMedian(numGen
+					.getDataSet())));
 			mode.setText(String.valueOf(desc.computeMode(numGen.getDataSet())));
-			stdDeviation.setText(String.valueOf(desc.computeStdDeviation(numGen.getDataSet())));
+			stdDeviation.setText(String.valueOf(desc.computeStdDeviation(numGen
+					.getDataSet())));
 		}
 	}
 
 	public CalculationScreen(NumberGenerator numberGenerator) {
-		this.numGen=numberGenerator;
+		this.numGen = numberGenerator;
 		listArea = new JPanel();
 		sampleData = new JList(numGen.getDataSet().toArray());
 		JScrollPane scrollPane1 = new JScrollPane(sampleData);
