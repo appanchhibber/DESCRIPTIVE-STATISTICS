@@ -5,8 +5,7 @@ import java.util.*;
 /**
  * http://stackoverflow.com/questions/21009973/java-timer-random-time-each-time-
  * between-2-values reference
- * http://www.kitabxana.net/files/books/file/1354098277.pdf
- * Java Random method
+ * http://www.kitabxana.net/files/books/file/1354098277.pdf Java Random method
  * 
  * @author hp1
  *

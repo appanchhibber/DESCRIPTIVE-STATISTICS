@@ -15,7 +15,7 @@ public class MathOperations {
 			sum += a;
 		}
 		mean = sum / numberList.size();
-		System.out.println("Mean = "+ mean);
+		System.out.println("Mean = " + mean);
 		return mean;
 	}
 
@@ -34,14 +34,13 @@ public class MathOperations {
 		return first;
 	}
 
-	public static String findFrequency(
-			List<Integer> numberList) {
+	public static String findFrequency(List<Integer> numberList) {
 
 		ListOperations.doSort(numberList);
 		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 		HashMap<Integer, Integer> modesMap = new HashMap<Integer, Integer>();
 		int maxCount = 1;
-		StringBuilder mode=new StringBuilder();
+		StringBuilder mode = new StringBuilder();
 		for (int i = 0; i < numberList.size(); i++) {
 			int currentValue = numberList.get(i);
 			if (map.containsKey(currentValue)) {
@@ -60,12 +59,11 @@ public class MathOperations {
 		for (Map.Entry<Integer, Integer> xyz : map.entrySet()) {
 			if (xyz.getValue() == maxCount) {
 				modesMap.put(xyz.getKey(), xyz.getValue());
-				mode.append(xyz.getKey()+",");
+				mode.append(xyz.getKey() + ",");
 			}
 		}
-		System.out.println("new has map:" + modesMap.keySet() + ",value"
-				+ modesMap.values());
-		return mode.toString().substring(0,mode.length()-1);
+		System.out.println("new has map:" + modesMap.keySet() + ",value" + modesMap.values());
+		return mode.toString().substring(0, mode.length() - 1);
 		// modesMap;
 	}
 }
