@@ -15,6 +15,7 @@ public class MathOperations {
 			sum += a;
 		}
 		mean = sum / numberList.size();
+		System.out.println("Mean = "+ mean);
 		return mean;
 	}
 
