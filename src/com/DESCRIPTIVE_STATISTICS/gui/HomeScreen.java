@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
+import com.DESCRIPTIVE_STATISTICS.Operations.NumberGenerator;
+
 public class HomeScreen extends JPanel implements ActionListener {
 
 	public JLabel welcomeMessage, comboLabel;
@@ -16,7 +18,14 @@ public class HomeScreen extends JPanel implements ActionListener {
 				Windows window=Windows.getInstance();
 				window.setView(new UserMainScreen());
 			} else {
-
+				Windows window=Windows.getInstance();
+				NumberGenerator numberGenerator = new NumberGenerator();
+				int randomSize=100+ (int)numberGenerator.random()*1000;
+				numberGenerator.setDataSetLimit(randomSize);
+				while(numberGenerator.getDataSet().size()!=randomSize){
+					numberGenerator.getRandomNumber();
+				}
+				window.setView(new CalculationScreen(numberGenerator));
 			}
 		}
 

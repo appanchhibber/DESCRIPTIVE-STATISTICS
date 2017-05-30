@@ -1,4 +1,4 @@
-package com.DESCRIPTIVESTATISTICS.Operations;
+package com.DESCRIPTIVE_STATISTICS.Operations;
 
 import java.util.List;
 

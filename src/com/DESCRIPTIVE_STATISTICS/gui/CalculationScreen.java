@@ -11,9 +11,9 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
-import com.DESCRIPTIVESTATISTICS.Operations.MathOperations;
-import com.DESCRIPTIVESTATISTICS.Operations.NumberGenerator;
-import com.DESCRIPTIVESTATISTICS.Operations.StatisticOperations;
+import com.DESCRIPTIVE_STATISTICS.Operations.MathOperations;
+import com.DESCRIPTIVE_STATISTICS.Operations.NumberGenerator;
+import com.DESCRIPTIVE_STATISTICS.Operations.StatisticOperations;
 
 public class CalculationScreen extends JPanel implements ActionListener {
 	public JPanel listArea, resultArea;
@@ -34,6 +34,7 @@ public class CalculationScreen extends JPanel implements ActionListener {
 			min.setText(desc.findMin(numGen.getDataSet()).toString());
 			mean.setText(String.valueOf(desc.computeMean(numGen.getDataSet())));
 			median.setText(String.valueOf(desc.computeMedian(numGen.getDataSet())));
+			mode.setText(String.valueOf(desc.computeMode(numGen.getDataSet())));
 			stdDeviation.setText(String.valueOf(MathOperations.squareRoot(desc.computeVariance(numGen.getDataSet()))));
 		}
 	}

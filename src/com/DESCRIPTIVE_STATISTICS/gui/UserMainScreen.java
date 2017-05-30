@@ -8,7 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import com.DESCRIPTIVESTATISTICS.Operations.NumberGenerator;
+import com.DESCRIPTIVE_STATISTICS.Operations.NumberGenerator;
 
 public class UserMainScreen extends JPanel implements ActionListener {
 	public JLabel info;
