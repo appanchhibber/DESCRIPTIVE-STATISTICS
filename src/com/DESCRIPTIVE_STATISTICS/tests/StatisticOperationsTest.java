@@ -23,4 +23,25 @@ public static void intializeData(){
 		String result=statsOperation.computeMode(dataSet);
 		assertEquals("12",result);
 	}
+	@Test
+	public void medianTest(){
+		assertEquals(9,(int)statsOperation.computeMedian(dataSet));
+	}
+	@Test
+	public void maxValueTest(){
+		assertEquals(96,statsOperation.findMax(dataSet));
+	}
+	@Test
+	public void minValueTest(){
+		assertEquals(1,statsOperation.findMin(dataSet));
+	}
+	@Test
+	public void meanTest(){
+		assertEquals(String.valueOf(12.631578947368421),String.valueOf(statsOperation.computeMean(dataSet)));
+	}
+	
+	@Test 
+	public void standardDeviationTest(){
+		assertEquals(String.valueOf(20.516146828821302),String.valueOf(statsOperation.computeStdDeviation(dataSet)));
+	}
 }

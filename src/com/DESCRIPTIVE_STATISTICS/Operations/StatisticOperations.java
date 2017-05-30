@@ -30,7 +30,7 @@ public class StatisticOperations {
 		return MathOperations.findFrequency(numberList);
 	}
 
-	public double computeVariance(List<Integer> numberList) {
+	public double computeStdDeviation(List<Integer> numberList) {
 		double sum = 0;
 		double variance = 0.0;
 		for (int a : numberList) {
@@ -38,15 +38,15 @@ public class StatisticOperations {
 		}
 		variance = sum / (numberList.size() - 1);
 		System.out.println("Variance = " + variance);
-		return variance;
+		return MathOperations.squareRoot(variance);
 	}
 
-	public Integer findMax(List<Integer> numberList) {
+	public int findMax(List<Integer> numberList) {
 		ListOperations.doSort(numberList);
 		return numberList.get(numberList.size() - 1);
 	}
 
-	public Integer findMin(List<Integer> numberList) {
+	public int findMin(List<Integer> numberList) {
 		ListOperations.doSort(numberList);
 		return numberList.get(0);
 	}

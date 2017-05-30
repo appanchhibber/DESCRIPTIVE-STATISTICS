@@ -30,12 +30,12 @@ public class CalculationScreen extends JPanel implements ActionListener {
 		}
 		else if(e.getSource()==calculate){
 			StatisticOperations desc = new StatisticOperations();
-			max.setText(desc.findMax(numGen.getDataSet()).toString());
-			min.setText(desc.findMin(numGen.getDataSet()).toString());
+			max.setText(String.valueOf(desc.findMax(numGen.getDataSet())));
+			min.setText(String.valueOf(desc.findMin(numGen.getDataSet())));
 			mean.setText(String.valueOf(desc.computeMean(numGen.getDataSet())));
 			median.setText(String.valueOf(desc.computeMedian(numGen.getDataSet())));
 			mode.setText(String.valueOf(desc.computeMode(numGen.getDataSet())));
-			stdDeviation.setText(String.valueOf(MathOperations.squareRoot(desc.computeVariance(numGen.getDataSet()))));
+			stdDeviation.setText(String.valueOf(desc.computeStdDeviation(numGen.getDataSet())));
 		}
 	}
 
