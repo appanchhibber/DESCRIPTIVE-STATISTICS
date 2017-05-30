@@ -2,9 +2,11 @@ package com.DESCRIPTIVE_STATISTICS.gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.InputMismatchException;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -47,6 +49,7 @@ public class UserMainScreen extends JPanel implements ActionListener {
 			window.setView(new HomeScreen());
 		}
 		else if(e.getSource()==createList){
+			try{
 			Windows window=Windows.getInstance();
 			NumberGenerator numberGenerator = new NumberGenerator();
 			numberGenerator.setDataSetLimit(Integer.parseInt(dataSize.getText()));
@@ -54,6 +57,15 @@ public class UserMainScreen extends JPanel implements ActionListener {
 				numberGenerator.getRandomNumber();
 			}
 			window.setView(new CalculationScreen(numberGenerator));
+			}
+			catch(NumberFormatException ex){
+				JOptionPane.showMessageDialog(null, "Please enter a number only");
+				return;
+			}
+			catch(Exception exp){
+				JOptionPane.showMessageDialog(null, "Some error occured.Try Again!");
+				return;
+			}
 		}
 
 	}
